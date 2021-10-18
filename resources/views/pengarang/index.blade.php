@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data Pengarang
+                <div class="card-header"><b>Data Pengarang</b>
                     <a href="{{route('pengarang.create')}}" class="btn btn-sm btn-primary float-right">Tambah</a>
                 </div>
 
@@ -35,9 +35,14 @@
                                     {{$data->tlp}}
                                 </td>
                                 <td>
-                                    <button class="btn btn-success">Edit</button> |
-                                    <button class="btn btn-warning">Show</button> |
-                                    <button class="btn btn-danger">Delete</button> 
+                                <a href="{{ route('pengarang.edit', $data->id)}}" class="btn btn-success">Edit</a>
+                                    <a href="{{ route('pengarang.show', $data->id)}}" class="btn btn-info">Show</a>
+                                    <form action="{{ route('pengarang.destroy', $data->id)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                    <!-- <a href="{{ route('pengarang.show', $data->id)}}" class="btn btn-danger">Delete</a> -->
                                 </td>
                             </tr>
                             @endforeach
