@@ -4,6 +4,17 @@
         <div class = "card-header">
             <center><b>Edit Data Pengarang</b></center>
         </div>
+
+        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
         <div class = "card-body">
             <form action="{{route('pengarang.update', $pengarang->id)}}" method="post" accept="">
                 @csrf
@@ -18,7 +29,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">No Telepon</label>
-                    <input type="text" value="{{$pengarang->tlp}}" class="form-control" name="telepon" placeholder="Masukan Nomer Telepon" required>
+                    <input type="text" value="{{$pengarang->tlp}}" class="form-control" name="tlp" placeholder="Masukan Nomer Telepon" required>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-success">
