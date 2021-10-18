@@ -4,8 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data Pengarang
-                    <a href="{{route('pengarang.create')}}" class="btn btn-sm btn-primary float-right">Tambah</a>
+                <div class="card-header"><b><center>Data Pengarang</center></b>
                 </div>
 
                 <div class="card-body">
@@ -17,30 +16,25 @@
                                 <th>Nama Pengarang</th>
                                 <th>Email</th>
                                 <th>Telepon</th>
-                                <th>Aksi</th>
                             </tr>
                             @php $no = 1; @endphp
-                            @foreach($pengarang as $data)
                             <tr>
                                 <td>
                                     {{$no++}}
                                 </td>
                                 <td>
-                                    {{$data->nama_pengarang}}
+                                    <label for="nama_pengarang"></label>
+                                    {{$pengarang->nama_pengarang}}
                                 </td>
                                 <td>
-                                    {{$data->email}}
+                                    <label for="email"></label>
+                                    {{$pengarang->email}}
                                 </td>
                                 <td>
-                                    {{$data->tlp}}
-                                </td>
-                                <td>
-                                    <button class="btn btn-success">Edit</button> |
-                                    <button class="btn btn-warning">Show</button> |
-                                    <button class="btn btn-danger">Delete</button> 
+                                    <label for="tlp"></label>
+                                    {{$pengarang->tlp}}
                                 </td>
                             </tr>
-                            @endforeach
                         </table>
                    </div>
                 </div>

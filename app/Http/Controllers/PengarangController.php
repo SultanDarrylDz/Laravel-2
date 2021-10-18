@@ -50,9 +50,10 @@ class PengarangController extends Controller
      * @param  \App\Models\pengarang  $pengarang
      * @return \Illuminate\Http\Response
      */
-    public function show(pengarang $pengarang)
+    public function show($id)
     {
-        //
+        $pengarang = Pengarang::findOrFail($id);
+        return view('pengarang.show', compact('pengarang'));
     }
 
     /**

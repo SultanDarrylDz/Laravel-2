@@ -17,7 +17,7 @@ class CreatePengarangsTable extends Migration
             $table->id();
             $table->string('nama_pengarang');
             $table->string('email')->nullable();
-            $table->string('telp')->default(0);
+            $table->string('tlp')->default(0);
             $table->timestamps();
         });
     }

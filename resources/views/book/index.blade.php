@@ -2,7 +2,7 @@
 @section('content')
     <h3 class="ml-3">Book Page <br><br>
 @foreach ($book as $data)
-    Writer     : {{ $data->pengarang->nama_pengarang }} <br>
+    Pengarang     : {{ $data->pengarang->nama_pengarang }} <br>
     Email      : {{ $data->pengarang->email }} <br>
     Title      : {{ $data->nama_buku }} <br>
     Page       : {{ $data->jumlah_halaman }} <br>    
@@ -13,7 +13,7 @@
     <b>Daftar Pengarang</b><br>
     <hr>
     @foreach ($pengarang as $data)
-        ◉Penulis         : {{ $data->nama_pengarang }} <br>
+        Pengarang         : {{ $data->nama_pengarang }} <br>
         ◉Email           : {{ $data->email }} <br>
         ◉No Telepon      : {{ $data->tlp }} <br>
         <hr>
